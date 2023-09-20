@@ -30,7 +30,7 @@ export const getEnv = ({
 		return {
 			warning: new Warning({
 				nRFAssetTracker: 'Env',
-				LwM2M: 'Temperature',
+				LwM2M: 'Temperature (3303)',
 			}),
 		}
 
@@ -38,7 +38,7 @@ export const getEnv = ({
 		return {
 			warning: new Warning({
 				nRFAssetTracker: 'Env',
-				LwM2M: 'Humidity',
+				LwM2M: 'Humidity (3304)',
 			}),
 		}
 
