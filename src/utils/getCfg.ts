@@ -49,9 +49,7 @@ export const getCfg = (
 
 	if ('errors' in maybeValidCfg) {
 		return {
-			error: new TypeError({
-				description: maybeValidCfg.errors,
-			}),
+			error: new TypeError(maybeValidCfg.errors),
 		}
 	}
 

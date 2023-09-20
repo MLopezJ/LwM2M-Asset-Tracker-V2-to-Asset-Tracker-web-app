@@ -78,9 +78,7 @@ export const getEnv = ({
 	const maybeValidEnvironment = validateWithType(Environment)(object)
 	if ('errors' in maybeValidEnvironment) {
 		return {
-			error: new TypeError({
-				description: maybeValidEnvironment.errors,
-			}),
+			error: new TypeError(maybeValidEnvironment.errors),
 		}
 	}
 

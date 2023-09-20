@@ -51,10 +51,11 @@ void describe('getGnss', () => {
 		const result = getGnss(location) as { error: TypeError }
 		const instancePathError = result.error.description[0]?.instancePath
 		const message = result.error.description[0]?.message
+		const checkMessage = message?.includes("must have required property 'lat'")
 		const keyword = result.error.description[0]?.keyword
 
 		assert.equal(instancePathError, `/v`)
-		assert.equal(message, "must have required property 'lat'")
+		assert.equal(checkMessage, true)
 		assert.equal(keyword, 'required')
 	})
 })

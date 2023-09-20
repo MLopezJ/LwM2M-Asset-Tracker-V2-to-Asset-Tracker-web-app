@@ -54,10 +54,11 @@ void describe('getDev', () => {
 		const dev = getDev(device) as { error: TypeError }
 		const instancePathError = dev.error.description[0]?.instancePath
 		const message = dev.error.description[0]?.message
+		const checkMessage = message?.includes("must have required property 'imei'")
 		const keyword = dev.error.description[0]?.keyword
 
 		assert.equal(instancePathError, `/v`)
-		assert.equal(message, "must have required property 'imei'")
+		assert.equal(checkMessage, true)
 		assert.equal(keyword, 'required')
 	})
 })

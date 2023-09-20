@@ -38,9 +38,7 @@ export const getBat = (
 	const maybeValidBat = validateWithType(Battery)(object)
 	if ('errors' in maybeValidBat) {
 		return {
-			error: new TypeError({
-				description: maybeValidBat.errors,
-			}),
+			error: new TypeError(maybeValidBat.errors),
 		}
 	}
 

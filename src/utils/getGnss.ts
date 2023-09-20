@@ -43,9 +43,7 @@ export const getGnss = (
 	const maybeValidGnss = validateWithType(GNSS)(object)
 	if ('errors' in maybeValidGnss) {
 		return {
-			error: new TypeError({
-				description: maybeValidGnss.errors,
-			}),
+			error: new TypeError(maybeValidGnss.errors),
 		}
 	}
 

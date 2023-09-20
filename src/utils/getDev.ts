@@ -42,9 +42,7 @@ export const getDev = (
 	const maybeValidDeviceData = validateWithType(Device)(object)
 	if ('errors' in maybeValidDeviceData) {
 		return {
-			error: new TypeError({
-				description: maybeValidDeviceData.errors,
-			}),
+			error: new TypeError(maybeValidDeviceData.errors),
 		}
 	}
 

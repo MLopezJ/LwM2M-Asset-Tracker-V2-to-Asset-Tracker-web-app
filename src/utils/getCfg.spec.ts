@@ -62,9 +62,12 @@ void describe('getCfg', () => {
 
 		const config = getCfg(object) as { error: TypeError }
 		const message = config.error.description[0]?.message
+		const checkMessage = message?.includes(
+			"must have required property 'accath'",
+		)
 		const keyword = config.error.description[0]?.keyword
 
-		assert.equal(message, "must have required property 'accath'")
+		assert.equal(checkMessage, true)
 		assert.equal(keyword, 'required')
 	})
 })

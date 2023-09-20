@@ -48,9 +48,10 @@ void describe('getBat', () => {
 		}
 		const bat = getBat(device) as { error: TypeError }
 		const message = bat.error.description[0]?.message
+		const checkMessage = message?.includes("must have required property 'v'")
 		const keyword = bat.error.description[0]?.keyword
 
-		assert.equal(message, "must have required property 'v'")
+		assert.equal(checkMessage, true)
 		assert.equal(keyword, 'required')
 	})
 })

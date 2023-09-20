@@ -76,9 +76,7 @@ export const getRoam = ({
 	const maybeValidRoam = validateWithType(RoamingInfo)(object)
 	if ('errors' in maybeValidRoam) {
 		return {
-			error: new TypeError({
-				description: maybeValidRoam.errors,
-			}),
+			error: new TypeError(maybeValidRoam.errors),
 		}
 	}
 
