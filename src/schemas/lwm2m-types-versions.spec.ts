@@ -12,9 +12,18 @@ import { describe, test } from 'node:test'
 import assert from 'node:assert'
 
 /**
- * Idea: I want to link the ADR 008 with a test, because otherwise that could be lose when the context change
+ * The following versions are expected to be used by the LwM2M objects:
  *
- * @see https://github.com/MLopezJ/asset-tracker-lwm2m-js/blob/saga/adr/008-default-lwm2m-version.md
+ * | Object ID | Object Version | LwM2M Version |
+ * | --------- | -------------- | ------------- |
+ * | 3         | 1.2            | 1.1           |
+ * | 4         | 1.3            | 1.1           |
+ * | 6         | 1.0            | 1.0           |
+ * | 3303      | 1.1            | 1.0           |
+ * | 3304      | 1.1            | 1.0           |
+ * | 3323      | 1.1            | 1.0           |
+ *
+ * Failure to follow these recommendations could lead to errors.
  */
 void describe('ensure that objects referenced from @nordicsemiconductor/lwm2m-types have the correct LwM2M and object versions', () => {
 	;[
