@@ -77,7 +77,6 @@ export const getRoam = ({
 	if ('errors' in maybeValidRoam) {
 		return {
 			error: new TypeError({
-				message: 'error validating type',
 				description: maybeValidRoam.errors,
 			}),
 		}

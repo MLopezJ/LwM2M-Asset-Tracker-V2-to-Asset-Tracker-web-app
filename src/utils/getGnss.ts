@@ -44,7 +44,6 @@ export const getGnss = (
 	if ('errors' in maybeValidGnss) {
 		return {
 			error: new TypeError({
-				message: 'error validating type',
 				description: maybeValidGnss.errors,
 			}),
 		}

@@ -79,7 +79,6 @@ export const getEnv = ({
 	if ('errors' in maybeValidEnvironment) {
 		return {
 			error: new TypeError({
-				message: 'error validating type',
 				description: maybeValidEnvironment.errors,
 			}),
 		}

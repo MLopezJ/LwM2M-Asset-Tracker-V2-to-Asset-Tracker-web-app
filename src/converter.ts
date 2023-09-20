@@ -74,14 +74,8 @@ type ErrorDescription = {
 export class TypeError extends Error {
 	description: ErrorDescription[]
 
-	constructor({
-		message,
-		description,
-	}: {
-		message: string
-		description: ErrorDescription[]
-	}) {
-		super(message)
+	constructor({ description }: { description: ErrorDescription[] }) {
+		super('error validating type')
 		this.description = description
 	}
 }
