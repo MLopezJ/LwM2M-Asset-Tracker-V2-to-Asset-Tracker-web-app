@@ -75,18 +75,13 @@ export class TypeError extends Error {
 	description: ErrorDescription[]
 
 	constructor({
-		name,
 		message,
 		description,
 	}: {
-		name: string
 		message: string
 		description: ErrorDescription[]
 	}) {
-		super()
-
-		this.name = name
-		this.message = message
+		super(message)
 		this.description = description
 	}
 }

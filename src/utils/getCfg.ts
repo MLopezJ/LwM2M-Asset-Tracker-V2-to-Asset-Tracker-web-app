@@ -51,7 +51,6 @@ export const getCfg = (
 	if ('errors' in maybeValidCfg) {
 		return {
 			error: new TypeError({
-				name: 'type error',
 				message: 'error validating type',
 				description: maybeValidCfg.errors,
 			}),

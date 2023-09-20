@@ -44,7 +44,6 @@ export const getDev = (
 	if ('errors' in maybeValidDeviceData) {
 		return {
 			error: new TypeError({
-				name: 'type error',
 				message: 'error validating type',
 				description: maybeValidDeviceData.errors,
 			}),

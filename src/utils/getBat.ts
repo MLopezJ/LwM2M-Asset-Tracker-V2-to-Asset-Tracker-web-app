@@ -40,7 +40,6 @@ export const getBat = (
 	if ('errors' in maybeValidBat) {
 		return {
 			error: new TypeError({
-				name: 'type error',
 				message: 'error validating type',
 				description: maybeValidBat.errors,
 			}),
