@@ -17,8 +17,8 @@ export const getCfg = (
 	if (config === undefined)
 		return {
 			warning: new Warning({
-				message: 'Cfg object can not be created',
-				description: 'Config (50009) object is undefined',
+				nRFAssetTracker: 'Cfg',
+				LwM2M: 'Config (50009)',
 			}),
 		}
 

@@ -29,24 +29,24 @@ export const getEnv = ({
 	if (temperature === undefined)
 		return {
 			warning: new Warning({
-				message: 'Env object can not be created',
-				description: 'Temperature (3303) object is undefined',
+				nRFAssetTracker: 'Env',
+				LwM2M: 'Temperature',
 			}),
 		}
 
 	if (humidity === undefined)
 		return {
 			warning: new Warning({
-				message: 'Env object can not be created',
-				description: 'Humidity (3304) object is undefined',
+				nRFAssetTracker: 'Env',
+				LwM2M: 'Humidity',
 			}),
 		}
 
 	if (pressure === undefined)
 		return {
 			warning: new Warning({
-				message: 'Env object can not be created',
-				description: 'Pressure (3323) object is undefined',
+				nRFAssetTracker: 'Env',
+				LwM2M: 'Pressure (3323)',
 			}),
 		}
 

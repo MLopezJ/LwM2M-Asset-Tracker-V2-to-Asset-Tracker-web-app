@@ -17,8 +17,8 @@ export const getBat = (
 	if (device === undefined)
 		return {
 			warning: new Warning({
-				message: 'Bat object can not be created',
-				description: 'Device (3) object is undefined',
+				nRFAssetTracker: 'Bat',
+				LwM2M: 'Device (3)',
 			}),
 		}
 

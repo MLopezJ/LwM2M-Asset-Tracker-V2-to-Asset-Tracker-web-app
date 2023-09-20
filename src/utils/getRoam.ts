@@ -25,8 +25,8 @@ export const getRoam = ({
 	if (connectivityMonitoring === undefined)
 		return {
 			warning: new Warning({
-				message: 'Roam object can not be created',
-				description: 'Connectivity Monitoring (4) object is undefined',
+				nRFAssetTracker: 'Roam',
+				LwM2M: 'Connectivity Monitoring (4)',
 			}),
 		}
 

@@ -84,14 +84,14 @@ export class Warning extends Error {
 	description: string
 
 	constructor({
-		message,
-		description,
+		nRFAssetTracker,
+		LwM2M,
 	}: {
-		message: string
-		description: string
+		nRFAssetTracker: string
+		LwM2M: string
 	}) {
-		super(message)
-		this.description = description
+		super(`${nRFAssetTracker} object can not be created`)
+		this.description = `${LwM2M} object is undefined`
 	}
 }
 

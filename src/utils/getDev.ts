@@ -17,8 +17,8 @@ export const getDev = (
 	if (device === undefined)
 		return {
 			warning: new Warning({
-				message: 'Dev object can not be created',
-				description: 'Device (3) object is undefined',
+				nRFAssetTracker: 'Dev',
+				LwM2M: 'Device (3)',
 			}),
 		}
 

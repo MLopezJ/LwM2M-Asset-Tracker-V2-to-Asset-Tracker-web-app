@@ -17,8 +17,8 @@ export const getGnss = (
 	if (location === undefined)
 		return {
 			warning: new Warning({
-				message: 'GNSS object can not be created',
-				description: 'Location (6) object is undefined',
+				nRFAssetTracker: 'GNSS',
+				LwM2M: 'Location (6)',
 			}),
 		}
 
