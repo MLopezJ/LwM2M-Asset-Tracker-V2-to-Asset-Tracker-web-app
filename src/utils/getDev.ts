@@ -17,7 +17,6 @@ export const getDev = (
 	if (device === undefined)
 		return {
 			warning: new Warning({
-				name: 'warning',
 				message: 'Dev object can not be created',
 				description: 'Device (3) object is undefined',
 			}),

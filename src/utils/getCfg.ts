@@ -17,7 +17,6 @@ export const getCfg = (
 	if (config === undefined)
 		return {
 			warning: new Warning({
-				name: 'warning',
 				message: 'Cfg object can not be created',
 				description: 'Config (50009) object is undefined',
 			}),

@@ -29,7 +29,6 @@ export const getEnv = ({
 	if (temperature === undefined)
 		return {
 			warning: new Warning({
-				name: 'warning',
 				message: 'Env object can not be created',
 				description: 'Temperature (3303) object is undefined',
 			}),
@@ -38,7 +37,6 @@ export const getEnv = ({
 	if (humidity === undefined)
 		return {
 			warning: new Warning({
-				name: 'warning',
 				message: 'Env object can not be created',
 				description: 'Humidity (3304) object is undefined',
 			}),
@@ -47,7 +45,6 @@ export const getEnv = ({
 	if (pressure === undefined)
 		return {
 			warning: new Warning({
-				name: 'warning',
 				message: 'Env object can not be created',
 				description: 'Pressure (3323) object is undefined',
 			}),

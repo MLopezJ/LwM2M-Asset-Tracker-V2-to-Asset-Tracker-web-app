@@ -25,7 +25,6 @@ export const getRoam = ({
 	if (connectivityMonitoring === undefined)
 		return {
 			warning: new Warning({
-				name: 'warning',
 				message: 'Roam object can not be created',
 				description: 'Connectivity Monitoring (4) object is undefined',
 			}),

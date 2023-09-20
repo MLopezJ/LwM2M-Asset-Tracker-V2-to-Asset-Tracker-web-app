@@ -90,18 +90,13 @@ export class Warning extends Error {
 	description: string
 
 	constructor({
-		name,
 		message,
 		description,
 	}: {
-		name: string
 		message: string
 		description: string
 	}) {
-		super()
-
-		this.name = name
-		this.message = message
+		super(message)
 		this.description = description
 	}
 }
