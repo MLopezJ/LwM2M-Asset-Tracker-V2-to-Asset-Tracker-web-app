@@ -193,8 +193,9 @@ void describe('converter', () => {
 		const result = converter(input, warningCallback)
 		assert.deepEqual(result, expected)
 		/**
-		 * 4 objects (env, gnss, cfg, roam) from nRF Asset Tracker were not generated because dependent objects were not present in input,
-		 * thats why it is expecting the warning callback to be called 4 times
+		 * 4 objects (env, gnss, cfg, roam) from nRF Asset Tracker were not generated
+		 * because dependent objects were not present in input, thats why it is expecting
+		 * the warning callback to be called 4 times
 		 */
 		assert.strictEqual(warningCallback.mock.callCount(), 4)
 	})
@@ -206,6 +207,7 @@ void describe('converter', () => {
 		const input = {
 			[Temperature_3303_urn]: [
 				{
+					// First instance of Temperature object
 					'5601': 27.18,
 					'5602': 27.71,
 					'5700': 27.18,
@@ -230,6 +232,7 @@ void describe('converter', () => {
 
 			[Humidity_3304_urn]: [
 				{
+					// First instance of Humidity object
 					'5601': 23.535,
 					'5602': 24.161,
 					'5700': 24.057,
@@ -247,6 +250,7 @@ void describe('converter', () => {
 
 			[Pressure_3323_urn]: [
 				{
+					// First instance of Pressure object
 					'5601': 101697,
 					'5602': 101705,
 					'5700': 10,
@@ -293,7 +297,7 @@ void describe('converter', () => {
 				'1': 'Thingy:91',
 				'2': '351358815340515',
 				'3': '22.8.1+0',
-				'7': [2754, 0, 1, 2, 3, 4, 5, 6, 7], // array instance
+				'7': [2754, 0, 1, 2, 3, 4, 5, 6, 7], // array resource
 				'11': [0],
 				'13': 1675874731,
 				'16': 'UQ',
