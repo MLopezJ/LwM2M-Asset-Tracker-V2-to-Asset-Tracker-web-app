@@ -3,7 +3,7 @@ import {
 	type DeviceData,
 	validateWithType,
 } from '@nordicsemiconductor/asset-tracker-cloud-docs/protocol'
-import { type Device_3 } from '@nordicsemiconductor/lwm2m-types'
+import { type Device_3 } from '../schemas/index.js'
 import { TypeError, Warning } from '../converter.js'
 
 /**

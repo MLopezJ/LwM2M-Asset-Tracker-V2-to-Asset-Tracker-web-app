@@ -3,10 +3,7 @@ import {
 	type RoamingInfoData,
 	validateWithType,
 } from '@nordicsemiconductor/asset-tracker-cloud-docs/protocol'
-import type {
-	Device_3,
-	ConnectivityMonitoring_4,
-} from '@nordicsemiconductor/lwm2m-types'
+import type { Device_3, ConnectivityMonitoring_4 } from '../schemas/index.js'
 import { TypeError, Warning } from '../converter.js'
 
 /**

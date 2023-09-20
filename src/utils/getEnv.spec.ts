@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert'
-import type { Temperature_3303 } from '@nordicsemiconductor/lwm2m-types'
+import type { Temperature_3303 } from '../schemas/index.js'
 import { getEnv } from './getEnv.js'
 import { TypeError, Warning } from '../converter.js'
 

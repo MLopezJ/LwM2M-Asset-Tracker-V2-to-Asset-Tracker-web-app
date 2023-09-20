@@ -3,13 +3,13 @@ import {
 	Device_3_urn,
 	Humidity_3304_urn,
 	Location_6_urn,
-	parseURN,
 	Pressure_3323_urn,
 	Temperature_3303_urn,
 } from './index.js'
 
 import { describe, test } from 'node:test'
 import assert from 'node:assert'
+import { parseURN } from '@nordicsemiconductor/lwm2m-types'
 
 /**
  * The following versions are expected to be used by the LwM2M objects:

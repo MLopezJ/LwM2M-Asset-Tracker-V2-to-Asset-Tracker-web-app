@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert'
-import { type Location_6 } from '@nordicsemiconductor/lwm2m-types'
+import { type Location_6 } from '../schemas/index.js'
 import { getGnss } from './getGnss.js'
 import { TypeError, Warning } from '../converter.js'
 

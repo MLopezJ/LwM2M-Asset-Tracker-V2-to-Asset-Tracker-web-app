@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert'
-import type { ConnectivityMonitoring_4 } from '@nordicsemiconductor/lwm2m-types'
+import type { ConnectivityMonitoring_4 } from '../schemas/index.js'
 import { getRoam } from './getRoam.js'
 import { TypeError, Warning } from '../converter.js'
 

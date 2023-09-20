@@ -3,7 +3,7 @@ import {
 	type GNSSData,
 	validateWithType,
 } from '@nordicsemiconductor/asset-tracker-cloud-docs/protocol'
-import { type Location_6 } from '@nordicsemiconductor/lwm2m-types'
+import { type Location_6 } from '../schemas/index.js'
 import { TypeError, Warning } from '../converter.js'
 
 /**
