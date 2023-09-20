@@ -23,7 +23,7 @@ import assert from 'node:assert'
  * | 3304      | 1.1            | 1.0           |
  * | 3323      | 1.1            | 1.0           |
  *
- * Failure to follow these recommendations could lead to errors.
+ * Failure to follow these versions could lead to errors.
  */
 void describe('ensure that objects referenced from @nordicsemiconductor/lwm2m-types have the correct LwM2M and object versions', () => {
 	;[
