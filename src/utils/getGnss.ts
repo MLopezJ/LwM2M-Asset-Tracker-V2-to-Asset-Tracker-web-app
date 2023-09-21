@@ -7,7 +7,7 @@ import { type Location_6 } from '@nordicsemiconductor/lwm2m-types'
 import { TypeError, Warning } from '../converter.js'
 
 /**
- * Takes object id 6 (location) from 'LwM2M Asset Tracker v2' and transform into 'gnss' object from 'nRF Asset Tracker Reported'
+ * Takes object id 6 (location) from 'LwM2M Asset Tracker v2' and convert into 'gnss' object from 'nRF Asset Tracker Reported'
  *
  * @see https://github.com/MLopezJ/asset-tracker-cloud-coiote-azure-converter-js/blob/saga/documents/gnss.md
  */

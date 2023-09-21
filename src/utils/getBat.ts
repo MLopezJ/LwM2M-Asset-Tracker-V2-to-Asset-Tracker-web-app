@@ -7,7 +7,7 @@ import { type Device_3 } from '@nordicsemiconductor/lwm2m-types'
 import { TypeError, Warning } from '../converter.js'
 
 /**
- * Takes object id 3 (device) from 'LwM2M Asset Tracker v2' and transform into 'bat' object from 'nRF Asset Tracker Reported'
+ * Takes object id 3 (device) from 'LwM2M Asset Tracker v2' and convert into 'bat' object from 'nRF Asset Tracker Reported'
  *
  * @see https://github.com/MLopezJ/asset-tracker-cloud-coiote-azure-converter-js/blob/saga/documents/battery.md
  */
