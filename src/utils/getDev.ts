@@ -17,7 +17,7 @@ export const getDev = (
 	if (device === undefined)
 		return {
 			warning: new Warning({
-				nRFAssetTracker: 'Dev',
+				reportedId: 'dev',
 				LwM2M: 'Device (3)',
 			}),
 		}

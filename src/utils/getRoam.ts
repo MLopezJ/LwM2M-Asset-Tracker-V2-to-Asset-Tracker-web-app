@@ -25,7 +25,7 @@ export const getRoam = ({
 	if (connectivityMonitoring === undefined)
 		return {
 			warning: new Warning({
-				nRFAssetTracker: 'Roam',
+				reportedId: 'roam',
 				LwM2M: 'Connectivity Monitoring (4)',
 			}),
 		}

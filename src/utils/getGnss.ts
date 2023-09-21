@@ -17,7 +17,7 @@ export const getGnss = (
 	if (location === undefined)
 		return {
 			warning: new Warning({
-				nRFAssetTracker: 'GNSS',
+				reportedId: 'gnss',
 				LwM2M: 'Location (6)',
 			}),
 		}

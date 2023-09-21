@@ -29,7 +29,7 @@ export const getEnv = ({
 	if (temperature === undefined)
 		return {
 			warning: new Warning({
-				nRFAssetTracker: 'Env',
+				reportedId: 'env',
 				LwM2M: 'Temperature (3303)',
 			}),
 		}
@@ -37,7 +37,7 @@ export const getEnv = ({
 	if (humidity === undefined)
 		return {
 			warning: new Warning({
-				nRFAssetTracker: 'Env',
+				reportedId: 'env',
 				LwM2M: 'Humidity (3304)',
 			}),
 		}
@@ -45,7 +45,7 @@ export const getEnv = ({
 	if (pressure === undefined)
 		return {
 			warning: new Warning({
-				nRFAssetTracker: 'Env',
+				reportedId: 'env',
 				LwM2M: 'Pressure (3323)',
 			}),
 		}

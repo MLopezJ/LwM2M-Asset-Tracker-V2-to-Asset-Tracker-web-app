@@ -84,13 +84,13 @@ export class Warning extends Error {
 	description: string
 
 	constructor({
-		nRFAssetTracker,
+		reportedId,
 		LwM2M,
 	}: {
-		nRFAssetTracker: string
+		reportedId: keyof nRFAssetTrackerReportedType
 		LwM2M: string
 	}) {
-		super(`${nRFAssetTracker} object can not be created`)
+		super(`${reportedId} object can not be created`)
 		this.description = `${LwM2M} object is undefined`
 	}
 }

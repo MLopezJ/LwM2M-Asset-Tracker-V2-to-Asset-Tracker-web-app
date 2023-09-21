@@ -35,7 +35,7 @@ void describe('getDev', () => {
 	 */
 	void it(`should return a warning if the dependent LwM2M object for creating the 'dev' object is undefined`, () => {
 		const dev = getDev(undefined) as { warning: Warning }
-		assert.equal(dev.warning.message, 'Dev object can not be created')
+		assert.equal(dev.warning.message, 'dev object can not be created')
 		assert.equal(dev.warning.description, 'Device (3) object is undefined')
 	})
 

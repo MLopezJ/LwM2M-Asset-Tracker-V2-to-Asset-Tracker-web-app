@@ -17,7 +17,7 @@ export const getBat = (
 	if (device === undefined)
 		return {
 			warning: new Warning({
-				nRFAssetTracker: 'Bat',
+				reportedId: 'bat',
 				LwM2M: 'Device (3)',
 			}),
 		}

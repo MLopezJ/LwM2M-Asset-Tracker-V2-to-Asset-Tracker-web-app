@@ -30,7 +30,7 @@ void describe('getBat', () => {
 	 */
 	void it(`should return a warning if the dependent LwM2M object for creating the 'bat' object is undefined`, () => {
 		const result = getBat(undefined) as { warning: Warning }
-		assert.equal(result.warning.message, 'Bat object can not be created')
+		assert.equal(result.warning.message, 'bat object can not be created')
 		assert.equal(result.warning.description, 'Device (3) object is undefined')
 	})
 

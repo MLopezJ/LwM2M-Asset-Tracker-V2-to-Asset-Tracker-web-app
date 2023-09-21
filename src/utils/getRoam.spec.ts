@@ -64,7 +64,7 @@ void describe('getRoam', () => {
 		const result = getRoam({ connectivityMonitoring, device }) as {
 			warning: Warning
 		}
-		assert.equal(result.warning.message, 'Roam object can not be created')
+		assert.equal(result.warning.message, 'roam object can not be created')
 		assert.equal(
 			result.warning.description,
 			'Connectivity Monitoring (4) object is undefined',

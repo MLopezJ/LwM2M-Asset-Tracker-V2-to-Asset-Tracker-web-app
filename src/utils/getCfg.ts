@@ -17,7 +17,7 @@ export const getCfg = (
 	if (config === undefined)
 		return {
 			warning: new Warning({
-				nRFAssetTracker: 'Cfg',
+				reportedId: 'cfg',
 				LwM2M: 'Config (50009)',
 			}),
 		}

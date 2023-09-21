@@ -35,7 +35,7 @@ void describe('getGnss', () => {
 	 */
 	void it(`should return a warning if the dependent LwM2M object for creating the 'gnss' object is undefined`, () => {
 		const result = getGnss(undefined) as { warning: Warning }
-		assert.equal(result.warning.message, 'GNSS object can not be created')
+		assert.equal(result.warning.message, 'gnss object can not be created')
 		assert.equal(result.warning.description, 'Location (6) object is undefined')
 	})
 

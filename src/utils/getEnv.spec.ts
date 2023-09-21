@@ -76,7 +76,7 @@ void describe('getEnv', () => {
 		const result = getEnv({ temperature, humidity, pressure }) as {
 			warning: Warning
 		}
-		assert.equal(result.warning.message, 'Env object can not be created')
+		assert.equal(result.warning.message, 'env object can not be created')
 		assert.equal(
 			result.warning.description,
 			'Humidity (3304) object is undefined',

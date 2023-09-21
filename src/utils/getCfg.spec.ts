@@ -42,7 +42,7 @@ void describe('getCfg', () => {
 	 */
 	void it(`should return a warning if the dependent LwM2M object for creating the 'cfg' object is undefined`, () => {
 		const cfg = getCfg(undefined) as { warning: Warning }
-		assert.equal(cfg.warning.message, 'Cfg object can not be created')
+		assert.equal(cfg.warning.message, 'cfg object can not be created')
 		assert.equal(cfg.warning.description, 'Config (50009) object is undefined')
 	})
 
