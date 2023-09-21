@@ -1,8 +1,12 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert'
-import type { Temperature_3303 } from '@nordicsemiconductor/lwm2m-types'
+import {
+	Humidity_3304_urn,
+	parseURN,
+	type Temperature_3303,
+} from '@nordicsemiconductor/lwm2m-types'
 import { getEnv } from './getEnv.js'
-import { TypeError, Warning } from '../converter.js'
+import { TypeError, UndefinedLwM2MObjectWarning } from '../converter.js'
 
 void describe('getEnv', () => {
 	void it(`should create the 'env' object expected by 'nRF Asset Tracker Reported'`, () => {
@@ -74,12 +78,15 @@ void describe('getEnv', () => {
 			},
 		]
 		const result = getEnv({ temperature, humidity, pressure }) as {
-			warning: Warning
+			warning: UndefinedLwM2MObjectWarning
 		}
-		assert.equal(result.warning.message, 'env object can not be created')
 		assert.equal(
-			result.warning.description,
-			'Humidity (3304) object is undefined',
+			result.warning.message,
+			`'env' object can not be created because LwM2M object id '3304' is undefined`,
+		)
+		assert.deepEqual(
+			result.warning.undefinedLwM2MObject,
+			parseURN(Humidity_3304_urn),
 		)
 	})
 

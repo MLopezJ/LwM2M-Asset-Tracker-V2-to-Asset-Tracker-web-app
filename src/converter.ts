@@ -5,6 +5,7 @@ import {
 	Temperature_3303_urn,
 	Humidity_3304_urn,
 	Pressure_3323_urn,
+	parseURN,
 } from '@nordicsemiconductor/lwm2m-types'
 import type {
 	Device_3,
@@ -71,6 +72,11 @@ type ErrorDescription = {
 	message?: string
 }
 
+/**
+ * Error handler type
+ *
+ * @see https://github.com/MLopezJ/asset-tracker-lwm2m-js/blob/saga/adr/007-warning-and-error-handling.md
+ */
 export class TypeError extends Error {
 	description: ErrorDescription[]
 
@@ -80,18 +86,30 @@ export class TypeError extends Error {
 	}
 }
 
-export class Warning extends Error {
-	description: string
+/**
+ * Warning handler type
+ *
+ * @see https://github.com/MLopezJ/asset-tracker-lwm2m-js/blob/saga/adr/007-warning-and-error-handling.md
+ */
+export class UndefinedLwM2MObjectWarning extends Error {
+	undefinedLwM2MObject: {
+		ObjectID: string
+		ObjectVersion: string
+		LWM2MVersion: string
+	}
 
 	constructor({
 		reportedId,
-		LwM2M,
+		LwM2MObjectUrn,
 	}: {
 		reportedId: keyof nRFAssetTrackerReportedType
-		LwM2M: string
+		LwM2MObjectUrn: keyof LwM2MAssetTrackerV2
 	}) {
-		super(`${reportedId} object can not be created`)
-		this.description = `${LwM2M} object is undefined`
+		const LwM2MObjectInfo = parseURN(LwM2MObjectUrn)
+		super(
+			`'${reportedId}' object can not be created because LwM2M object id '${LwM2MObjectInfo.ObjectID}' is undefined`,
+		)
+		this.undefinedLwM2MObject = LwM2MObjectInfo
 	}
 }
 
@@ -100,7 +118,7 @@ export class Warning extends Error {
  */
 export const converter = (
 	input: LwM2MAssetTrackerV2,
-	onWarning?: (warning: Error) => unknown,
+	onWarning?: (warning: UndefinedLwM2MObjectWarning) => unknown,
 	onError?: (error: Error) => unknown,
 ): typeof nRFAssetTrackerReported => {
 	const result = {} as typeof nRFAssetTrackerReported

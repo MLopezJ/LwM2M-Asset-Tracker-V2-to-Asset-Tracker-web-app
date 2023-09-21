@@ -1,8 +1,12 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert'
-import type { ConnectivityMonitoring_4 } from '@nordicsemiconductor/lwm2m-types'
+import {
+	type ConnectivityMonitoring_4,
+	ConnectivityMonitoring_4_urn,
+	parseURN,
+} from '@nordicsemiconductor/lwm2m-types'
 import { getRoam } from './getRoam.js'
-import { TypeError, Warning } from '../converter.js'
+import { TypeError, UndefinedLwM2MObjectWarning } from '../converter.js'
 
 void describe('getRoam', () => {
 	void it(`should create the 'roam' object expected by 'nRF Asset Tracker Reported'`, () => {
@@ -62,12 +66,15 @@ void describe('getRoam', () => {
 		const connectivityMonitoring = undefined
 		const device = undefined
 		const result = getRoam({ connectivityMonitoring, device }) as {
-			warning: Warning
+			warning: UndefinedLwM2MObjectWarning
 		}
-		assert.equal(result.warning.message, 'roam object can not be created')
 		assert.equal(
-			result.warning.description,
-			'Connectivity Monitoring (4) object is undefined',
+			result.warning.message,
+			`'roam' object can not be created because LwM2M object id '4' is undefined`,
+		)
+		assert.deepEqual(
+			result.warning.undefinedLwM2MObject,
+			parseURN(ConnectivityMonitoring_4_urn),
 		)
 	})
 

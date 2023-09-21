@@ -1,10 +1,10 @@
-import type { Config_50009 } from '../schemas/Config_50009.js'
+import { type Config_50009, Config_50009_urn } from '../schemas/Config_50009.js'
 import {
 	Config,
 	type ConfigData,
 	validateWithType,
 } from '@nordicsemiconductor/asset-tracker-cloud-docs/protocol'
-import { TypeError, Warning } from '../converter.js'
+import { TypeError, UndefinedLwM2MObjectWarning } from '../converter.js'
 
 /**
  * Takes object id 50009 (config) from 'LwM2M Asset Tracker v2' and convert into 'cfg' object from 'nRF Asset Tracker Reported'
@@ -13,12 +13,15 @@ import { TypeError, Warning } from '../converter.js'
  */
 export const getCfg = (
 	config?: Config_50009,
-): { result: ConfigData } | { error: Error } | { warning: Warning } => {
+):
+	| { result: ConfigData }
+	| { error: Error }
+	| { warning: UndefinedLwM2MObjectWarning } => {
 	if (config === undefined)
 		return {
-			warning: new Warning({
+			warning: new UndefinedLwM2MObjectWarning({
 				reportedId: 'cfg',
-				LwM2M: 'Config (50009)',
+				LwM2MObjectUrn: Config_50009_urn,
 			}),
 		}
 

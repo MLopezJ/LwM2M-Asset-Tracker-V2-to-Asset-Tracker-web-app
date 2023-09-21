@@ -3,11 +3,12 @@ import {
 	type RoamingInfoData,
 	validateWithType,
 } from '@nordicsemiconductor/asset-tracker-cloud-docs/protocol'
-import type {
-	Device_3,
-	ConnectivityMonitoring_4,
+import {
+	type Device_3,
+	type ConnectivityMonitoring_4,
+	ConnectivityMonitoring_4_urn,
 } from '@nordicsemiconductor/lwm2m-types'
-import { TypeError, Warning } from '../converter.js'
+import { TypeError, UndefinedLwM2MObjectWarning } from '../converter.js'
 
 /**
  * Takes objects id 4 (connectivity monitoring) and 3 (device) from 'LwM2M Asset Tracker v2'
@@ -21,12 +22,15 @@ export const getRoam = ({
 }: {
 	connectivityMonitoring: ConnectivityMonitoring_4 | undefined
 	device: Device_3 | undefined
-}): { result: RoamingInfoData } | { error: Error } | { warning: Warning } => {
+}):
+	| { result: RoamingInfoData }
+	| { error: Error }
+	| { warning: UndefinedLwM2MObjectWarning } => {
 	if (connectivityMonitoring === undefined)
 		return {
-			warning: new Warning({
+			warning: new UndefinedLwM2MObjectWarning({
 				reportedId: 'roam',
-				LwM2M: 'Connectivity Monitoring (4)',
+				LwM2MObjectUrn: ConnectivityMonitoring_4_urn,
 			}),
 		}
 

@@ -1,7 +1,8 @@
 import { describe, it } from 'node:test'
 import assert from 'node:assert'
 import { getDev } from './getDev.js'
-import { TypeError, Warning } from '../converter.js'
+import { TypeError, UndefinedLwM2MObjectWarning } from '../converter.js'
+import { Device_3_urn, parseURN } from '@nordicsemiconductor/lwm2m-types'
 
 void describe('getDev', () => {
 	void it(`should create the 'dev' object expected by 'nRF Asset Tracker Reported'`, () => {
@@ -34,9 +35,12 @@ void describe('getDev', () => {
 	 * @see https://github.com/MLopezJ/asset-tracker-lwm2m-js/blob/saga/documents/nRFAssetTracker.md
 	 */
 	void it(`should return a warning if the dependent LwM2M object for creating the 'dev' object is undefined`, () => {
-		const dev = getDev(undefined) as { warning: Warning }
-		assert.equal(dev.warning.message, 'dev object can not be created')
-		assert.equal(dev.warning.description, 'Device (3) object is undefined')
+		const dev = getDev(undefined) as { warning: UndefinedLwM2MObjectWarning }
+		assert.equal(
+			dev.warning.message,
+			`'dev' object can not be created because LwM2M object id '3' is undefined`,
+		)
+		assert.deepEqual(dev.warning.undefinedLwM2MObject, parseURN(Device_3_urn))
 	})
 
 	void it(`should return an error if the result of the conversion does not meet the expected types`, () => {
