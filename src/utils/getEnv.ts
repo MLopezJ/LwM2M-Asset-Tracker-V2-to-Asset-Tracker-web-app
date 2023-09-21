@@ -30,7 +30,7 @@ export const getEnv = ({
 	pressure: Pressure_3323 | undefined
 }):
 	| { result: EnvironmentData }
-	| { error: Error }
+	| { error: TypeError }
 	| { warning: UndefinedLwM2MObjectWarning } => {
 	if (temperature === undefined)
 		return {

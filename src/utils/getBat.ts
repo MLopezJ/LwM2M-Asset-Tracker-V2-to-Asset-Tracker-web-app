@@ -15,7 +15,7 @@ export const getBat = (
 	device?: Device_3,
 ):
 	| { result: BatteryData }
-	| { error: Error }
+	| { error: TypeError }
 	| { warning: UndefinedLwM2MObjectWarning } => {
 	if (device === undefined)
 		return {

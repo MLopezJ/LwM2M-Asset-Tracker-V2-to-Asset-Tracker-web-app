@@ -14,7 +14,7 @@ import { TypeError, UndefinedLwM2MObjectWarning } from '../converter.js'
 export const getDev = (
 	device?: Device_3,
 ):
-	| { error: Error }
+	| { error: TypeError }
 	| { result: DeviceData }
 	| { warning: UndefinedLwM2MObjectWarning } => {
 	if (device === undefined)

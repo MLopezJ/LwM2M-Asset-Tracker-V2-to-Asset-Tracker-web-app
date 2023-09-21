@@ -18,7 +18,7 @@ export const getGnss = (
 	location?: Location_6,
 ):
 	| { result: GNSSData }
-	| { error: Error }
+	| { error: TypeError }
 	| { warning: UndefinedLwM2MObjectWarning } => {
 	if (location === undefined)
 		return {

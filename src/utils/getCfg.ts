@@ -15,7 +15,7 @@ export const getCfg = (
 	config?: Config_50009,
 ):
 	| { result: ConfigData }
-	| { error: Error }
+	| { error: TypeError }
 	| { warning: UndefinedLwM2MObjectWarning } => {
 	if (config === undefined)
 		return {

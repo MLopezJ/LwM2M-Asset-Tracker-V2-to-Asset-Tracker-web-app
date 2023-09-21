@@ -24,7 +24,7 @@ export const getRoam = ({
 	device: Device_3 | undefined
 }):
 	| { result: RoamingInfoData }
-	| { error: Error }
+	| { error: TypeError }
 	| { warning: UndefinedLwM2MObjectWarning } => {
 	if (connectivityMonitoring === undefined)
 		return {
