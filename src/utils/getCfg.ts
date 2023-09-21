@@ -20,7 +20,7 @@ export const getCfg = (
 	if (config === undefined)
 		return {
 			warning: new UndefinedLwM2MObjectWarning({
-				reportedId: 'cfg',
+				nRFAssetTrackerReportedId: 'cfg',
 				LwM2MObjectUrn: Config_50009_urn,
 			}),
 		}

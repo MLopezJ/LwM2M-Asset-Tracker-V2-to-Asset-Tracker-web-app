@@ -99,15 +99,15 @@ export class UndefinedLwM2MObjectWarning extends Error {
 	}
 
 	constructor({
-		reportedId,
+		nRFAssetTrackerReportedId,
 		LwM2MObjectUrn,
 	}: {
-		reportedId: keyof nRFAssetTrackerReportedType
+		nRFAssetTrackerReportedId: keyof nRFAssetTrackerReportedType
 		LwM2MObjectUrn: keyof LwM2MAssetTrackerV2
 	}) {
 		const LwM2MObjectInfo = parseURN(LwM2MObjectUrn)
 		super(
-			`'${reportedId}' object can not be created because LwM2M object id '${LwM2MObjectInfo.ObjectID}' is undefined`,
+			`'${nRFAssetTrackerReportedId}' object can not be created because LwM2M object id '${LwM2MObjectInfo.ObjectID}' is undefined`,
 		)
 		this.undefinedLwM2MObject = LwM2MObjectInfo
 	}

@@ -23,7 +23,7 @@ export const getGnss = (
 	if (location === undefined)
 		return {
 			warning: new UndefinedLwM2MObjectWarning({
-				reportedId: 'gnss',
+				nRFAssetTrackerReportedId: 'gnss',
 				LwM2MObjectUrn: Location_6_urn,
 			}),
 		}

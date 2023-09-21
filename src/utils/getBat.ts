@@ -20,7 +20,7 @@ export const getBat = (
 	if (device === undefined)
 		return {
 			warning: new UndefinedLwM2MObjectWarning({
-				reportedId: 'bat',
+				nRFAssetTrackerReportedId: 'bat',
 				LwM2MObjectUrn: Device_3_urn,
 			}),
 		}

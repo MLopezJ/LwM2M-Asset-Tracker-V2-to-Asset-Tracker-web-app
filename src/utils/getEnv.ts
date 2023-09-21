@@ -35,7 +35,7 @@ export const getEnv = ({
 	if (temperature === undefined)
 		return {
 			warning: new UndefinedLwM2MObjectWarning({
-				reportedId: 'env',
+				nRFAssetTrackerReportedId: 'env',
 				LwM2MObjectUrn: Temperature_3303_urn,
 			}),
 		}
@@ -43,7 +43,7 @@ export const getEnv = ({
 	if (humidity === undefined)
 		return {
 			warning: new UndefinedLwM2MObjectWarning({
-				reportedId: 'env',
+				nRFAssetTrackerReportedId: 'env',
 				LwM2MObjectUrn: Humidity_3304_urn,
 			}),
 		}
@@ -51,7 +51,7 @@ export const getEnv = ({
 	if (pressure === undefined)
 		return {
 			warning: new UndefinedLwM2MObjectWarning({
-				reportedId: 'env',
+				nRFAssetTrackerReportedId: 'env',
 				LwM2MObjectUrn: Pressure_3323_urn,
 			}),
 		}

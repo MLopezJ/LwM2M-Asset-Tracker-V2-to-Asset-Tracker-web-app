@@ -29,7 +29,7 @@ export const getRoam = ({
 	if (connectivityMonitoring === undefined)
 		return {
 			warning: new UndefinedLwM2MObjectWarning({
-				reportedId: 'roam',
+				nRFAssetTrackerReportedId: 'roam',
 				LwM2MObjectUrn: ConnectivityMonitoring_4_urn,
 			}),
 		}

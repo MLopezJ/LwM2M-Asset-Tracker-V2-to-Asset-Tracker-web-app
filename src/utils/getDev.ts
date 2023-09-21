@@ -20,7 +20,7 @@ export const getDev = (
 	if (device === undefined)
 		return {
 			warning: new UndefinedLwM2MObjectWarning({
-				reportedId: 'dev',
+				nRFAssetTrackerReportedId: 'dev',
 				LwM2MObjectUrn: Device_3_urn,
 			}),
 		}
