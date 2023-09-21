@@ -11,7 +11,7 @@ import { TypeError, Warning } from '../converter.js'
 
 /**
  * Takes objects id 4 (connectivity monitoring) and 3 (device) from 'LwM2M Asset Tracker v2'
- * and convert into 'bat' object from 'nRF Asset Tracker Reported'
+ * and convert into 'roam' object from 'nRF Asset Tracker Reported'
  *
  * @see https://github.com/MLopezJ/asset-tracker-cloud-coiote-azure-converter-js/blob/saga/documents/roam.md
  */
