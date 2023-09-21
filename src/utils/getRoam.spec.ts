@@ -71,7 +71,7 @@ void describe('getRoam', () => {
 		)
 	})
 
-	void it(`should return an error if result of the conversion has not the expected types`, () => {
+	void it(`should return an error if the result of the conversion does not meet the expected types`, () => {
 		const connectivityMonitoring = {
 			'0': 6,
 			'1': [6, 7],

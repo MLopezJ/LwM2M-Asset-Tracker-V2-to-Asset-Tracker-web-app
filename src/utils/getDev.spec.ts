@@ -39,7 +39,7 @@ void describe('getDev', () => {
 		assert.equal(dev.warning.description, 'Device (3) object is undefined')
 	})
 
-	void it(`should return an error if result of the conversion has not the expected types`, () => {
+	void it(`should return an error if the result of the conversion does not meet the expected types`, () => {
 		const device = {
 			'0': 'Nordic Semiconductor ASA',
 			'1': 'Thingy:91',

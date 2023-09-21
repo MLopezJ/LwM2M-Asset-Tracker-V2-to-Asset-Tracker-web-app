@@ -83,7 +83,7 @@ void describe('getEnv', () => {
 		)
 	})
 
-	void it(`should return an error if result of the conversion has not the expected types`, () => {
+	void it(`should return an error if the result of the conversion does not meet the expected types`, () => {
 		const temperature = [
 			{
 				'5601': 27.18,

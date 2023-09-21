@@ -46,7 +46,7 @@ void describe('getCfg', () => {
 		assert.equal(cfg.warning.description, 'Config (50009) object is undefined')
 	})
 
-	void it('should return an error if result of the conversion has not the expected types', () => {
+	void it('should return an error if the result of the conversion does not meet the expected types', () => {
 		const object = {
 			'0': true,
 			'1': 120,
