@@ -1,6 +1,6 @@
 # `nRF Asset Tracker Reported` data transition
 
-| LwM2M ID                                                                                                                                          | LwM2M Obj Version | LwM2M version | Name                    | nRF Asset Tracker                       |
+| LwM2M ID                                                                                                                                          | LwM2M Obj Version | LwM2M version | Name                    | nRF Asset Tracker Reported              |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------- | ----------------------- | --------------------------------------- |
 | [3](https://github.com/OpenMobileAlliance/lwm2m-registry/blob/prod/version_history/3-1_1.xml)                                                     | 1.2               | 1.1           | Device                  | [bat](./battery.md), [dev](./device.md) |
 | [4](https://github.com/OpenMobileAlliance/lwm2m-registry/blob/prod/version_history/4-1_1.xml)                                                     | 1.3               | 1.1           | Connectivity Monitoring | [roam](./roaming.md)                    |

@@ -203,7 +203,7 @@ See [example.js](./src/example.ts) for more details.
 
 ## Data transition
 
-see [./documents/nRFAssetTracker.md](./documents/nRFAssetTracker.md)
+see [./documents/data-transition.md](./documents/data-transition.md)
 
 ## Architecture decision records (ADRs)
 
