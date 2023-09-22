@@ -12,7 +12,7 @@ import assert from 'node:assert'
 import { parseURN } from '@nordicsemiconductor/lwm2m-types'
 
 /**
- * @see https://github.com/MLopezJ/asset-tracker-lwm2m-js/blob/saga/documents/data-transition.md
+ * @see {@link ../../documents/data-transition.md}
  */
 void describe('ensure that objects referenced from @nordicsemiconductor/lwm2m-types have the correct LwM2M and object versions', () => {
 	;[
