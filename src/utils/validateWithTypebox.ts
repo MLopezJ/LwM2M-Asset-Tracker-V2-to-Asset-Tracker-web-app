@@ -6,7 +6,7 @@ const ajv = new Ajv()
 ajv.addKeyword('kind')
 ajv.addKeyword('modifier')
 
-export const validateWithType = <T extends TSchema>(
+export const validateWithTypebox = <T extends TSchema>(
 	object: unknown,
 	schema: T,
 ):
