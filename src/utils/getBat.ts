@@ -39,24 +39,24 @@ export const getBat = (
 		ts: time,
 	}
 
-	return checkResult(Battery, object)
+	return validateType(object, Battery)
 }
 
 /**
  * Work in progress
- * 
+ *
  * Make a result checker
  */
-export const checkResult = <T extends TSchema>(
-	schema: T,
+export const validateType = <T extends TSchema>(
 	object: Record<string, unknown>,
+	schema: T,
 ): { result: Static<typeof schema> } | { error: TypeError } => {
-	const maybeValidBat = validateWithType(schema)(object)
-	if ('errors' in maybeValidBat) {
+	const validatedObject = validateWithType(schema)(object)
+	if ('errors' in validatedObject) {
 		return {
-			error: new TypeError(maybeValidBat.errors),
+			error: new TypeError(validatedObject.errors),
 		}
 	}
 
-	return { result: maybeValidBat }
+	return { result: validatedObject }
 }
