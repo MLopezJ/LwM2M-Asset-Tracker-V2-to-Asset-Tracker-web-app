@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test'
 import { Battery } from '@nordicsemiconductor/asset-tracker-cloud-docs/protocol'
-import { validateWithType } from './validateWithType'
+import { validateWithType } from './validateWithType.js'
 import assert from 'node:assert'
 
 void describe('validateWithType', () => {
@@ -22,7 +22,6 @@ void describe('validateWithType', () => {
 		} as unknown as typeof schema
 
 		const validatedObject = validateWithType(schema)(object)
-        console.log(validatedObject)
-		assert.equal('result' in validatedObject, true)
+		assert.equal('valid' in validatedObject, true)
 	})
 })

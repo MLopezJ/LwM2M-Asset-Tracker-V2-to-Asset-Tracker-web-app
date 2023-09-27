@@ -17,6 +17,6 @@ export const validateWithType = <T extends TSchema>(
 				errors: v.errors,
 			}
 		}
-		return value as Static<typeof schema>
+		return { valid: value as Static<typeof schema> }
 	}
 }
