@@ -1,7 +1,10 @@
 import { TypeError } from '../converter.js'
 import type { Static, TSchema } from '@sinclair/typebox'
-import { validateWithTypebox } from './validateWithTypebox.js'
+import Ajv, { type ErrorObject } from 'ajv'
 
+/**
+ * Check if object follow the schema definition
+ */
 export const validateAgainstSchema = <T extends TSchema>(
 	object: Record<string, unknown>,
 	schema: T,
@@ -14,4 +17,32 @@ export const validateAgainstSchema = <T extends TSchema>(
 	}
 
 	return { result: validatedObject.valid }
+}
+
+const ajv = new Ajv()
+// see @https://github.com/sinclairzx81/typebox/issues/51
+ajv.addKeyword('kind')
+ajv.addKeyword('modifier')
+
+/**
+ * Use typebox to check if object follow the schema definition
+ */
+const validateWithTypebox = <T extends TSchema>(
+	object: unknown,
+	schema: T,
+):
+	| {
+			errors: ErrorObject[]
+	  }
+	| {
+			valid: unknown
+	  } => {
+	const v = ajv.compile(schema)
+	const valid = v(object)
+	if (valid !== true) {
+		return {
+			errors: v.errors as ErrorObject[],
+		}
+	}
+	return { valid: object }
 }
