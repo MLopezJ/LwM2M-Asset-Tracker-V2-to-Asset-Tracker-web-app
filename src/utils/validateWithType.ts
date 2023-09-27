@@ -1,4 +1,4 @@
-import type { Static, TSchema } from '@sinclair/typebox'
+import type { TSchema } from '@sinclair/typebox'
 import Ajv, { type ErrorObject } from 'ajv'
 
 const ajv = new Ajv()
@@ -7,16 +7,21 @@ ajv.addKeyword('kind')
 ajv.addKeyword('modifier')
 
 export const validateWithType = <T extends TSchema>(
+	object: unknown,
 	schema: T,
-): ((value: unknown) => { errors: ErrorObject[] } | Static<typeof schema>) => {
+):
+	| {
+			errors: ErrorObject[]
+	  }
+	| {
+			valid: unknown
+	  } => {
 	const v = ajv.compile(schema)
-	return (value: unknown) => {
-		const valid = v(value)
-		if (valid !== true) {
-			return {
-				errors: v.errors,
-			}
+	const valid = v(object)
+	if (valid !== true) {
+		return {
+			errors: v.errors as ErrorObject[],
 		}
-		return { valid: value as Static<typeof schema> }
 	}
+	return { valid: object }
 }

@@ -10,18 +10,18 @@ void describe('validateWithType', () => {
 			v: 123,
 			ts: null,
 		} as unknown as typeof schema
-		const validatedObject = validateWithType(schema)(object)
+		const validatedObject = validateWithType(object, schema)
 		assert.equal('errors' in validatedObject, true)
 	})
 
-	void it.only(`should return value when type of object does follow the schema definition`, () => {
+	void it(`should return value when type of object does follow the schema definition`, () => {
 		const schema = Battery
 		const object = {
 			v: 123,
 			ts: 1675874731000,
 		} as unknown as typeof schema
 
-		const validatedObject = validateWithType(schema)(object)
+		const validatedObject = validateWithType(object, schema)
 		assert.equal('valid' in validatedObject, true)
 	})
 })

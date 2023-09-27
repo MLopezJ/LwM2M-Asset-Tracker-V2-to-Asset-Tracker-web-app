@@ -1,11 +1,10 @@
 import {
 	Battery,
-	validateWithType,
 	type BatteryData,
 } from '@nordicsemiconductor/asset-tracker-cloud-docs/protocol'
 import { Device_3_urn, type Device_3 } from '../schemas/index.js'
 import { TypeError, UndefinedLwM2MObjectWarning } from '../converter.js'
-import type { Static, TSchema } from '@sinclair/typebox'
+import { validateAgainstSchema } from './validateAgainstSchema.js'
 
 /**
  * Takes object id 3 (device) from 'LwM2M Asset Tracker v2' and convert into 'bat' object from 'nRF Asset Tracker Reported'
@@ -39,24 +38,5 @@ export const getBat = (
 		ts: time,
 	}
 
-	return validateType(object, Battery)
-}
-
-/**
- * Work in progress
- *
- * Make a result checker
- */
-export const validateType = <T extends TSchema>(
-	object: Record<string, unknown>,
-	schema: T,
-): { result: Static<typeof schema> } | { error: TypeError } => {
-	const validatedObject = validateWithType(schema)(object)
-	if ('errors' in validatedObject) {
-		return {
-			error: new TypeError(validatedObject.errors),
-		}
-	}
-
-	return { result: validatedObject }
+	return validateAgainstSchema(object, Battery)
 }
