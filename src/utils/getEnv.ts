@@ -13,6 +13,10 @@ import {
 import { validateAgainstSchema } from './validateAgainstSchema.js'
 import type { ValidationError } from './ValidationError.js'
 import { UndefinedLwM2MObjectWarning } from './UndefinedLwM2MObjectWarning.js'
+import {
+	firstElementfromInstances,
+	type Mutable,
+} from './firstElementfromInstances.js'
 
 /**
  * Defines the result type of 'getEnv' method, which will be one of the following options:
@@ -65,14 +69,9 @@ export const getEnv = ({
 			}),
 		}
 
-	// TODO: I would like to do something like this
-	// const temp = getFirstElementfromResource(temperature)?.['5700']
-	// however right now there is this problem: temperature is 'readonly' and cannot be assigned to the mutable
-	/**
-	 * First instance selected when object is multiple instance
-	 * @see {@link ../../adr/004-instance-selected-when-multiple-instance.md}
-	 */
-	const temp = temperature?.[0]?.['5700']
+	const temp = firstElementfromInstances(
+		temperature as Mutable<Temperature_3303>,
+	)?.['5700']
 	const hum = humidity?.[0]?.['5700']
 	const atmp = pressure?.[0]?.['5700']
 	const time = getTime({ temperature, humidity, pressure })
