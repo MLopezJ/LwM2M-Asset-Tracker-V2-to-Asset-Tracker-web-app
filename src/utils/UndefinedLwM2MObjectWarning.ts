@@ -6,7 +6,6 @@ import type {
 
 /**
  * Warning handler type
- * @see {@link ../../adr/007-warning-and-error-handling.md}
  */
 export class UndefinedLwM2MObjectWarning extends Error {
 	undefinedLwM2MObject: {
