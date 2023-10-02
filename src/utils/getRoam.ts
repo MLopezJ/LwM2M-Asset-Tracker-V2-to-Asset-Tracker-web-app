@@ -81,7 +81,7 @@ export const getRoam = ({
  * @see {@link ../../documents/roam.md}
  *
  * 'band' and 'eest' key from the 'roam' object defined by 'nRF Asset Tracker Reported' is not provided.
- * @see {@link ../../adr/009-nrf-asset-tracker-values-not-provided.md}
+ * @see {@link ../../adr/004-nrf-asset-tracker-reported-values-not-provided.md}
  */
 const createRoamObject = ({
 	nw,
