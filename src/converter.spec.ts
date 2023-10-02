@@ -156,9 +156,6 @@ void describe('converter', () => {
 		assert.deepEqual(result.gnss, expected.gnss)
 	})
 
-	/**
-	 * @see https://github.com/MLopezJ/asset-tracker-lwm2m-js/blob/saga/adr/006-result-generation.md for more details
-	 */
 	void it(`should create output even when some expected objects in the input are missing`, (context) => {
 		const input = {
 			[Device_3_urn]: {
@@ -200,10 +197,6 @@ void describe('converter', () => {
 		assert.strictEqual(warningCallback.mock.callCount(), 4)
 	})
 
-	/**
-	 * Instance selected when LwM2M object is multiple instance
-	 * @see {@link ../adr/004-instance-selected-when-multiple-instance.md}
-	 */
 	void it(`should select first instance when LwM2M object is an array`, () => {
 		const input = {
 			[Temperature_3303_urn]: [
@@ -288,11 +281,6 @@ void describe('converter', () => {
 		assert.deepEqual(converter(input), output)
 	})
 
-	/**
-	 * Element selected when LwM2M resource is multiple instance
-	 *
-	 * @see https://github.com/MLopezJ/asset-tracker-lwm2m-js/blob/saga/adr/005-element-selected-when-multiple-resource.md for more details
-	 */
 	void it(`should select first element when LwM2M resource is an array`, () => {
 		const input = {
 			[Device_3_urn]: {
