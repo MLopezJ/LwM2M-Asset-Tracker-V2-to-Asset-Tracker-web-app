@@ -223,6 +223,32 @@ void describe('converter', () => {
 		assert.strictEqual(warningCallback.mock.callCount(), 4)
 	})
 
+	void it(`should trigger an error if an 'Asset Tracker reported' object can not be created because convertion went wrong`, (context) => {
+		const input = {
+			[Device_3_urn]: {
+				'0': 'Nordic Semiconductor ASA',
+				'1': 'Thingy:91',
+				'2': '351358815340515',
+				'3': '22.8.1+0',
+				'7': [2754],
+				'11': [0],
+				//'13': 1675874731,
+				'16': 'UQ',
+				'19': '3.2.1',
+			},
+		}
+
+		const errorCallback = context.mock.fn()
+		converter(input, () => {}, errorCallback)
+
+		/**
+		 * Bat and Dev objects from 'Asset Tracker reported' uses resource 13 from LwM2M object id 3 as the timestamp value,
+		 * thats why it is expected the error callback to be called 2 times
+		 * @see {@link ../documents/data-transition.md}
+		 */
+		assert.strictEqual(errorCallback.mock.callCount(), 2)
+	})
+
 	void it(`should select first instance when LwM2M object is an array`, () => {
 		const input = {
 			[Temperature_3303_urn]: [
