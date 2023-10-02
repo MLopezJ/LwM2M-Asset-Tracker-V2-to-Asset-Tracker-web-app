@@ -13,10 +13,6 @@ import {
 import { validateAgainstSchema } from './validateAgainstSchema.js'
 import type { ValidationError } from './ValidationError.js'
 import { UndefinedLwM2MObjectWarning } from './UndefinedLwM2MObjectWarning.js'
-import {
-	firstElementfromInstances,
-	type Mutable,
-} from './firstElementfromInstances.js'
 
 /**
  * Defines the result type of 'getEnv' method, which will be one of the following options:
@@ -69,11 +65,15 @@ export const getEnv = ({
 			}),
 		}
 
-	const temp = firstElementfromInstances(
-		temperature as Mutable<Temperature_3303>,
-	)?.['5700']
-	const hum = humidity?.[0]?.['5700']
-	const atmp = pressure?.[0]?.['5700']
+	/**
+	 * First element from instances is the default option to be selected
+	 * @see {@link ../../adr/004-instance-selected-when-multiple-instance.md}
+	 */
+	const defaultInstance = 0
+
+	const temp = temperature?.[defaultInstance]?.['5700']
+	const hum = humidity?.[defaultInstance]?.['5700']
+	const atmp = pressure?.[defaultInstance]?.['5700']
 	const time = getTime({ temperature, humidity, pressure })
 	const object = createEnv({ temp, hum, atmp, time })
 
