@@ -156,7 +156,12 @@ void describe('converter', () => {
 		assert.deepEqual(result.gnss, expected.gnss)
 	})
 
-	void it(`should create output even when some expected objects in the input are missing`, (context) => {
+	void it(`should create output even when some expected objects in the input are missing`, () => {
+		/**
+		 * Check the data transition document to see the dependency between
+		 * 'LwM2M Asset Tracker v2' and 'Asset Tracker reported' objects
+		 * @see {@link ../documents/data-transition.md}
+		 */
 		const input = {
 			[Device_3_urn]: {
 				'0': 'Nordic Semiconductor ASA',
@@ -207,12 +212,12 @@ void describe('converter', () => {
 
 		const warningCallback = context.mock.fn()
 		converter(input, warningCallback)
-		
+
 		/**
 		 * 4 objects (env, gnss, cfg, roam) from 'Asset Tracker reported' were not generated
 		 * because dependent objects were not present in input, thats why it is expecting
 		 * the warning callback to be called 4 times
-		 * 
+		 *
 		 * @see {@link ../documents/data-transition.md}
 		 */
 		assert.strictEqual(warningCallback.mock.callCount(), 4)
