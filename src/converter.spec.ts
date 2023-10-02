@@ -12,7 +12,7 @@ import {
 import { converter } from './converter.js'
 
 void describe('converter', () => {
-	void it('should convert LwM2M Asset Tracker v2 format into nRF Asset Tracker format', () => {
+	void it(`should convert 'LwM2M Asset Tracker v2' format into 'nRF Asset Tracker reported' format`, () => {
 		const input = {
 			[Device_3_urn]: {
 				'0': 'Nordic Semiconductor ASA',
