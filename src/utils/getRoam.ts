@@ -32,7 +32,7 @@ type GetRoamResult =
  *
  * Connectivity Monitoring (4) object does not support timestamp, for that reason timestamp value is taken from
  * Device (3) object.
- * @see {@link ../../adr/010-roam-timestamp-not-supported-by-lwm2m.md}
+ * @see {@link ../../adr/005-roam-timestamp-not-supported-by-lwm2m.md}
  */
 export const getRoam = ({
 	connectivityMonitoring,

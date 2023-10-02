@@ -34,7 +34,7 @@ void describe('getRoam', () => {
 			/**
 			 * Timestamp is taken from resource 13.
 			 *
-			 * @see {@link ../../adr/010-roam-timestamp-not-supported-by-lwm2m.md}
+			 * @see {@link ../../adr/005-roam-timestamp-not-supported-by-lwm2m.md}
 			 *
 			 */
 			'13': 1675874731,
@@ -102,7 +102,7 @@ void describe('getRoam', () => {
 			/**
 			 * Timestamp is taken from resource 13.
 			 *
-			 * @see {@link ../../adr/010-roam-timestamp-not-supported-by-lwm2m.md}
+			 * @see {@link ../../adr/005-roam-timestamp-not-supported-by-lwm2m.md}
 			 */
 			'13': 1675874731,
 			'16': 'UQ',

@@ -14,7 +14,7 @@
 | cell   | /4/0/8                                                                             |
 | ip     | /4/0/4                                                                             |
 | eest   | [value not provided](../adr/004-nrf-asset-tracker-reported-values-not-provided.md) |
-| ts     | [/3/0/13](../adr/010-roam-timestamp-not-supported-by-lwm2m.md)                     |
+| ts     | [/3/0/13](../adr/005-roam-timestamp-not-supported-by-lwm2m.md)                     |
 
 ## Details
 
