@@ -186,13 +186,34 @@ void describe('converter', () => {
 			},
 		}
 
-		const warningCallback = context.mock.fn()
-		const result = converter(input, warningCallback)
+		const result = converter(input)
 		assert.deepEqual(result, expected)
+	})
+
+	void it(`should trigger a warning if an 'Asset Tracker reported' object can not be created because equivalent LwM2M object is undefined`, (context) => {
+		const input = {
+			[Device_3_urn]: {
+				'0': 'Nordic Semiconductor ASA',
+				'1': 'Thingy:91',
+				'2': '351358815340515',
+				'3': '22.8.1+0',
+				'7': [2754],
+				'11': [0],
+				'13': 1675874731,
+				'16': 'UQ',
+				'19': '3.2.1',
+			},
+		}
+
+		const warningCallback = context.mock.fn()
+		converter(input, warningCallback)
+		
 		/**
-		 * 4 objects (env, gnss, cfg, roam) from nRF Asset Tracker were not generated
+		 * 4 objects (env, gnss, cfg, roam) from 'Asset Tracker reported' were not generated
 		 * because dependent objects were not present in input, thats why it is expecting
 		 * the warning callback to be called 4 times
+		 * 
+		 * @see {@link ../documents/data-transition.md}
 		 */
 		assert.strictEqual(warningCallback.mock.callCount(), 4)
 	})
