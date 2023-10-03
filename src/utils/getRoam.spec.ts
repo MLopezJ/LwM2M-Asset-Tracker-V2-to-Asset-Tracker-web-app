@@ -121,6 +121,9 @@ void describe('getRoam', () => {
 		assert.equal(keyword, 'required')
 	})
 
+	/**
+	 * @see {@link ../../adr/004-nrf-asset-tracker-reported-values-not-provided.md}
+	 */
 	void it(`should not create the 'band' and 'eest' keys from 'Roam' object`, () => {
 		const connectivityMonitoring = {
 			'0': 6,

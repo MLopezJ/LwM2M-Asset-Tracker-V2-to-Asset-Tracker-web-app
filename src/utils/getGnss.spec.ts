@@ -69,6 +69,9 @@ void describe('getGnss', () => {
 		assert.equal(keyword, 'required')
 	})
 
+	/**
+	 * @see {@link ../../adr/004-nrf-asset-tracker-reported-values-not-provided.md}
+	 */
 	void it(`should not create 'hdg' from 'GNSS' object`, () => {
 		const location = {
 			'0': -43.5723,

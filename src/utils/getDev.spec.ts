@@ -67,6 +67,9 @@ void describe('getDev', () => {
 		assert.equal(keyword, 'required')
 	})
 
+	/**
+	 * @see {@link ../../adr/004-nrf-asset-tracker-reported-values-not-provided.md}
+	 */
 	void it(`should not create the 'iccid' key from the 'Dev' object`, () => {
 		const device = {
 			'0': 'Nordic Semiconductor ASA',
