@@ -14,6 +14,8 @@ export class UndefinedLwM2MObjectWarning extends Error {
 		LWM2MVersion: string
 	}
 
+	notCreatednRFAssetTrackerReportedObject: string
+
 	constructor({
 		nRFAssetTrackerReportedId,
 		LwM2MObjectUrn,
@@ -26,5 +28,6 @@ export class UndefinedLwM2MObjectWarning extends Error {
 			`'${nRFAssetTrackerReportedId}' object can not be created because LwM2M object id '${LwM2MObjectInfo.ObjectID}' is undefined`,
 		)
 		this.undefinedLwM2MObject = LwM2MObjectInfo
+		this.notCreatednRFAssetTrackerReportedObject = nRFAssetTrackerReportedId
 	}
 }
