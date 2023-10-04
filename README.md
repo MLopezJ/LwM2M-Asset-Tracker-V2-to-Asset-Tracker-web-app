@@ -32,22 +32,36 @@ Data transition from `asset_tracker_v2 LwM2M` to `nRF Asset Tracker reported`
 ## Installation
 
 ```
-npm install
+npm i --save-exact @nordicsemiconductor/asset-tracker-lwm2m
 ```
 
-## Test
+## Running the tests
+
+After cloning the repository:
 
 ```
+npm ci
 npm test
 ```
 
-## Coverage
+## Example usage
 
-```
-TODO: add command
+```TypeScript
+import {
+	converter,
+	type LwM2MAssetTrackerV2,
+} from '@nordicsemiconductor/asset-tracker-lwm2m'
+
+const lwM2MAssetTrackerV2 = {} as LwM2MAssetTrackerV2 // Object with Asset Tracker v2 objects...
+const onWarning = (warning) => console.log(warning)
+const onError = (error) => console.log(error)
+const result = converter(lwM2MAssetTrackerV2, onWarning, onError)
+console.log(result)
 ```
 
-## Expected input
+See [./src/example.ts](./src/example.ts) for more details.
+
+### Example input
 
 A JSON document containing the
 [`asset_tracker_v2`](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/applications/asset_tracker_v2/README.html)
@@ -63,7 +77,7 @@ import {
   Humidity_3304_urn,
   Pressure_3323_urn,
   Config_50009_urn
-} from "./schemas/index.js";
+} from "@nordicsemiconductor/lwm2m-types";
 
 export const input = {
 	[Device_3_urn]: {
@@ -144,7 +158,7 @@ export const input = {
 }
 ```
 
-## Expected output
+### Example output
 
 The output is the
 [nRF Asset Tracker Reported](https://github.com/NordicSemiconductor/asset-tracker-cloud-docs/blob/saga/docs/cloud-protocol/Reported.ts)
@@ -196,27 +210,6 @@ const result = {
 	},
 }
 ```
-
-## Example
-
-```TypeScript
-import {
-	converter,
-	type LwM2MAssetTrackerV2,
-} from './converter.js'
-
-const lwM2MAssetTrackerV2 = {} as LwM2MAssetTrackerV2 // Object with Asset Tracker v2 objects...
-const onWarning = (warning) => console.log(warning)
-const onError = (error) => console.log(error)
-const result = converter(lwM2MAssetTrackerV2, onWarning, onError)
-console.log(result)
-```
-
-See [example.js](./src/example.ts) for more details.
-
-## Data transition
-
-see [./documents/data-transition.md](./documents/data-transition.md)
 
 ## Architecture decision records (ADRs)
 
