@@ -12,8 +12,22 @@ TODO:
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier/)
 [![ESLint: TypeScript](https://img.shields.io/badge/ESLint-TypeScript-blue.svg)](https://github.com/typescript-eslint/typescript-eslint)
 
-> Converts a JSON document containing the `asset_tracker_v2` device and sensor
-> data encoded as LwM2M to the JSON document required by nRF Asset Tracker.
+Converts a JSON document containing the `asset_tracker_v2` device and sensor
+data encoded as LwM2M to the JSON document required by nRF Asset Tracker.
+
+## LwM2M to JSON mapping
+
+Data transition from `asset_tracker_v2 LwM2M` to `nRF Asset Tracker reported`
+
+| LwM2M ID                                                                                                                                          | LwM2M Obj Version | LwM2M version | Name                    | nRF Asset Tracker Reported                                                   |
+| ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------- | ----------------------- | ---------------------------------------------------------------------------- |
+| [3](https://github.com/OpenMobileAlliance/lwm2m-registry/blob/prod/version_history/3-1_1.xml)                                                     | 1.2               | 1.1           | Device                  | [bat](./docs/battery.md), [dev](./docs/device.md), [roam](./docs/roaming.md) |
+| [4](https://github.com/OpenMobileAlliance/lwm2m-registry/blob/prod/version_history/4-1_1.xml)                                                     | 1.3               | 1.1           | Connectivity Monitoring | [roam](./docs/roaming.md)                                                    |
+| [6](https://github.com/OpenMobileAlliance/lwm2m-registry/blob/prod/version_history/6-1_0.xml)                                                     | 1.0               | 1.0           | Location                | [gnss](./docs/gnss.md)                                                       |
+| [3303](https://github.com/OpenMobileAlliance/lwm2m-registry/blob/prod/version_history/3303-1_1.xml)                                               | 1.1               | 1.0           | Temperature             | [env](./docs/environment.md)                                                 |
+| [3304](https://github.com/OpenMobileAlliance/lwm2m-registry/blob/prod/version_history/3304-1_1.xml)                                               | 1.1               | 1.0           | Humidity                | [env](./docs/environment.md)                                                 |
+| [3323](https://github.com/OpenMobileAlliance/lwm2m-registry/blob/prod/version_history/3323-1_1.xml)                                               | 1.1               | 1.0           | Pressure                | [env](./docs/environment.md)                                                 |
+| [50009](https://github.com/NordicSemiconductor/asset-tracker-cloud-firmware-aws/blob/saga/src/cloud/lwm2m_integration/config_object_descript.xml) |                   |               | Config                  | [cfg](./docs/config.md)                                                      |
 
 ## Installation
 
